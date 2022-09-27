@@ -23,6 +23,10 @@ class CompanyListingsViewModel @Inject constructor(
     private val _state = mutableStateOf(CompanyListingsState())
     val state: State<CompanyListingsState> = _state
 
+    init {
+        getCompanyListings()
+    }
+
     fun onEvent(event: CompanyListingsEvent) {
         when (event) {
             CompanyListingsEvent.Refresh -> {
